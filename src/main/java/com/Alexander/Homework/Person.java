@@ -7,12 +7,12 @@ package com.Alexander.Homework;
 Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль.
 */
 public class Person {
-    String fio;
-    String position;
-    String email;
-    String phoneNumber;
-    int salary;
-    int age;
+    private String fio;
+    private String position;
+    private String email;
+    private String phoneNumber;
+    private int salary;
+    private int age;
 
     public Person(String fio, String position, String email, String phoneNumber, int salary, int age) {
         this.fio = fio;
@@ -23,7 +23,36 @@ public class Person {
         this.age = age;
     }
 
+    public String getFio() {
+        return fio;
+    }
+
+
+    public String getPosition() {
+        return position;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+
+    public int getSalary() {
+        return salary;
+    }
+
+
+    public int getAge() {
+        return age;
+    }
+
     public void toOutput() {
-        System.out.println("ФИО сотрудника: " + fio + ". Данный сотрудник имеет должность: \"" + position + "\". Его email: " + email + ". Его контактный телефон: " + phoneNumber + ". Его заработная плата: " + salary + " рублей. Его возраст: " + age + " лет.");
+        System.out.println("ФИО сотрудника: " + getFio() + ". Данный сотрудник имеет должность: \"" + getPosition() + "\". Его email: " + getEmail() + ". Его контактный телефон: " + getPhoneNumber() + ". Его заработная плата: " + getSalary() + " рублей. Его возраст: " + getAge() + " лет.");
     }
 }

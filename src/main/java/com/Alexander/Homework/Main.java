@@ -12,7 +12,6 @@ public class Main {
         Person person = new Person("Иванов Иван Иванович", "Ведущий специалист", "ivanov_ivan@mail.com", "84994328015", 120000, 26);
         person.toOutput();
 
-        //Добавление в консоль пустой строки для удобного чтения вывода работы программы
         System.out.println();
 
         //2-ое задание
@@ -37,22 +36,18 @@ public class Main {
 
         //Проверка сохраненных значений через вывод в консоль:
         for (int i = 0; i < 5; i++) {
-            System.out.println("A first name and a surname of the employee is " + persArray[i].fio + ". The employee is employed as \"" + persArray[i].position + "\". The employee`s email is " + persArray[i].email + ". The employee`s contact phone: " + persArray[i].phoneNumber + ". The employee`s salary: " + persArray[i].salary + " of rubles. The employee has " + persArray[i].age + " years old.");
+            System.out.println("A first name and a surname of the employee is " + persArray[i].getFio() + ". The employee is employed as \"" + persArray[i].getPosition() + "\". The employee`s email is " + persArray[i].getEmail() + ". The employee`s contact phone: " + persArray[i].getPhoneNumber() + ". The employee`s salary: " + persArray[i].getSalary() + " of rubles. The employee has " + persArray[i].getAge() + " years old.");
         }
 
-        //Добавление в консоль пустой строки для удобного чтения вывода работы программы
         System.out.println();
 
         //3-е задание
         /*
         Создать класс Park с внутренним классом, с помощью объектов которого можно хранить информацию об аттракционах, времени их работы и стоимости.
          */
-        //Проверка через создание объекта, заполнение его полей и вывод хранимой информации в консоль
-        Park.MainInfo info = new Park().new MainInfo();
-        info.attraction = "\"Американские горки\"";
-        info.workTime = "с 10:00 до 15:00";
-        info.cost = 1000;
-        System.out.println("Название карусели: " + info.attraction + ". Она открыта " + info.workTime + " часов дня. " +
-                "Стоимость 1 билета составляет: " + info.cost + " рублей.");
+        Park park1 = new Park("Очаково", 2);
+        park1.addAttractions(0, "карусель", "с 9 до 18:00", 101);
+        park1.addAttractions(1, "горки", "с 10 до 18:00", 203);
+        park1.getParkAttractions();
     }
 }
