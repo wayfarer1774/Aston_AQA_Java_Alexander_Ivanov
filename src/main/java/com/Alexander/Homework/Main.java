@@ -1,12 +1,27 @@
-//дз-6
 package com.Alexander.Homework;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import static java.lang.Integer.parseInt;
 
 public class Main {
+    /*
+    Реализовать сохранение данных в csv файл; Реализовать загрузку данных из csv файла. Файл читается целиком.
+
+    Структура csv файла:
+    Строка заголовок с набором столбцов
+    Набор строк с целочисленными значениями
+    Разделитель между столбцами - символ точка с запятой (;)
+
+    Пример (см. на прикрепленном скриншоте)
+
+    Для хранения данных использовать класс вида:
+    public class AppData {
+        private String[] header;
+        private int[][] data;
+        // ...
+    }
+    Если выполняется save(AppData data), то старые данные в файле полностью перезаписываются.
+    */
     public static void main(String[] args) {
         AppData obj = new AppData();
         String filepath = "myfile.csv";
@@ -38,22 +53,5 @@ public class Main {
                 }
             }
 
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    private static int countRows(String filePath) {
-        int numRows = 0;
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            while (br.readLine() != null) {
-                numRows++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return numRows;
     }
-
-
 }
