@@ -27,7 +27,6 @@ public class Main {
         Если выполняется save(AppData data), то старые данные в файле полностью перезаписываются.
         */
     public static void main(String[] args) {
-        AppData obj = new AppData();
         String filepath = "myfile.csv";
         List<List<String>> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
